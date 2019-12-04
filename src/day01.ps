@@ -1,0 +1,41 @@
+/page_width 595 def
+/page_height 832 def
+
+count array astore
+/input exch def
+
+/get_fuel {
+    3 idiv 2 sub
+} def
+
+/get_fuel_part_2 {
+    /total 0 def
+    /subtotal exch def
+    {
+        /subtotal subtotal get_fuel def
+        subtotal 0 le { exit } if
+        /total total subtotal add def
+    } loop
+    total
+} def
+
+/int_to_string {
+    dup
+    log floor cvi 1 add string
+    cvs
+} def
+
+/part_one 0 input { get_fuel add } forall int_to_string def
+/part_two 0 input { get_fuel_part_2 add } forall int_to_string def
+
+/Helvetica findfont
+12 scalefont
+setfont
+
+72 page_height 72 sub moveto
+(The answer to part one is: ) show
+part_one show
+
+72 page_height 72 sub 18 sub moveto
+(The answer to part two is: ) show
+part_two show
