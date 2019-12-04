@@ -6,6 +6,6 @@ for i in $(seq -w 26); do
             -dDEVICEWIDTHPOINTS=595 -dDEVICEHEIGHTPOINTS=832 \
             -dBATCH \
             -sDEVICE=pdfwrite -sOutputFile="output/day${i}.pdf" \
-            "data/day${i}.txt" "src/day${i}.ps"
+            "data/day${i}.txt" "src/day${i}.ps" > /dev/null
     fi
 done
